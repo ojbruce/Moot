@@ -1,7 +1,85 @@
-@(message: String)
 
-@main("Welcome to Play") {
+@main("Welcome to Moot") {
 
-    @play20.welcome(message)
+<nav id="main-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <a class="navbar-brand" href="#">Moot - The way to Happyness</a>
+    
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login">Come on in !</a></li>
+    </ul>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+    </div>
+</nav>
+
+<div id="container" style="margin-top:70px;">
+
+    <content>
+        <div class="content-Share">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <h1 class="blocks-header">Share and have Fun ! </h1>
+                        <p class="blocks-body">
+                            Have fun discovering a new kind of discussion.
+                            Share your life, experiences, feelings, it only just take one Moot.
+                            Share, Learn, Educate... It's simple.
+                            You just need to knock the door.
+                        </p>
+                    </div>
+                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                        <img class="img-responsive" src="@routes.Assets.at("img/Sharexcf.png")" alt=""> 
+                    </div>
+              </div>
+        </div>
+
+        </div>
+
+        <hr class="blocks-spacer ">
+
+        <div class="content-Follow">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <h1 class="blocks-header"> Meet new Friends ! </h1>
+                    <p class="blocks-body">
+                        Moot is like a magic portal. Cross the treshold ! 
+                        Enlighten your day with delightfull members. 
+                        Follow, Moot, Discuss... Imagine a world of greatness.
+                        You just need to sign-in and open the door.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="@routes.Assets.at("img/friends.png")" alt=""> 
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <hr class="blocks-spacer ">
+
+        <div class="content-Enjoy">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <h1 class="blocks-header"> Enjoy ! </h1>
+                        <p class="blocks-body">
+                            Moot needs you ! <br/>
+                            "Cause Baby you're a firework" - end of Katty Perry's quote! <br/>
+                            Join our #octohappycat team.
+                        </p>
+                    </div>
+                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                        <img class="img-responsive" src="@routes.Assets.at("img/fireworks.jpeg")" alt=""> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </content>
+</div>  
 
 }

@@ -10,5 +10,6 @@ libraryDependencies ++= Seq(
   jdbc,
   anorm,
   cache,
-  ws
+  ws,
+  "com.livestream" %% "scredis" % "2.0.6"
 )
