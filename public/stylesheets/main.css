@@ -1,0 +1,24 @@
+/** Index Page **/
+.blocks-header {
+    margin-bottom : 50px;
+    color : #0A274F;
+}
+
+.blocks-body {
+    font-size   : 18px;
+    font-weight : 400;
+}
+
+.blocks-spacer {
+    border-top: 1px solid #94aedb;
+}
+.content-Share{
+    padding: 40px;
+}
+
+.content-Follow{
+    padding: 40px;
+}
+.content-Enjoy{
+    padding: 40px;
+}
