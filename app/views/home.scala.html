@@ -1,0 +1,63 @@
+@(userId: String, username: String)
+
+
+@main("Moot") {
+
+    <div ng-controller="MootCtrl" ng-app="moot"
+    ng-init="init('@userId', '@username')">
+
+        <div id="container-fluid" >
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 register-header">   
+                    <div class="col-lg-1 col-sm-1 ">
+                        <h2 class="whitisant">Moot - Welcome {{username}}</h2>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-2 col-sm-push-6 col-sm-offset-1 col-lg-offset-1">
+
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle glyphicon glyphicon-user" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            <span class="caret"></span>
+ 
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1">Settings</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1">Logout</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 col-sm-6" id="tweet_column">
+                <form class="form-inline" ng-submit="send()" require>
+                    <textarea ng-model="text" class="form-control" placeholder="> input message" class="message" id="tweeter"></textarea >
+                    <br>
+                    <input type="submit" class="form-control"/>
+                </form>
+
+                <br>
+
+                <div class="panel panel-tweet" ng-repeat="message in get_messages(feed) | orderBy:'-timestamp'">
+                    <h4>
+                        {{ users[message.user_id].username }}
+                        <span ng-show="message.user_id != current_user">
+                        <button class="btn btn-primary" ng-show="users[message.user_id].isFollowing" ng-click="unfollow_user(message.user_id)">Unfollow</button>
+                        <button class="btn btn-default" ng-show="!users[message.user_id].isFollowing" ng-click="follow_user(message.user_id)">Follow</button>
+                        </span>
+                    </h4>
+                    <div class="panel-body">
+                        {{ message.body }}
+                    </div>
+                    <button ng-show="$last" class="btn btn-default" ng-click="feed_page[feed] = feed_page[feed] + 1; fetch_feed(feed, feed_page[feed])">Load more posts</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+}
