@@ -1,17 +1,17 @@
 @(error: Option[String])
 
 @main("Welcome to Moot") {
+    <div id="container-fluid" >
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 register-header">   
+                <h1 class="whitisant">Moot</h1>
+            </div>
+        </div>
+    </div>    
+    <div id="container" >
+        
+    
 
-<nav id="main-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <a class="navbar-brand" href="#">Moot - The way to Happyness</a>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-    </div>
-</nav>
-
-
-
-<div id="container" style="margin-top:70px;">
     <div class="row">
 
         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -29,18 +29,18 @@
 
 
             <div class="Signin-section">
-                <h3>Sign-in</h3>
-                <form class="form-horizontal" role="form" action="signin" method="post">
+                <h3>Sign-up</h3>
+                <form class="form-horizontal" role="form" action="signup" method="post">
                     <div class="form-group">
-                        <label for="username_login" class="col-sm-2 control-label">Username</label>
+                        <label for="username" class="col-sm-2 control-label">Username</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username_login" placeholder="Username"  name="username"  pattern="[0-9a-zA-Z]{5,15}"  title="Username must be between 5 and 15 alphanumeric characters"  required>
+                            <input type="text" class="form-control" id="username" placeholder="Username"  name="username"  pattern="[0-9a-zA-Z]{5,15}"  title="Username must be between 5 and 15 alphanumeric characters"  required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password_login" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password_login" placeholder="Password" name="password" pattern=".{5,15}" title="Password must be between 5 and 15 characters" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" pattern=".{5,15}" title="Password must be between 5 and 15 characters" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -74,13 +74,7 @@
                 </form>
                 </div>
             </div>
-
-            
         </div>
-        <div class="col-lg-5 col-lg-offset-8 col-sm-6">
-            <img class="img-responsive" src="@routes.Assets.at("img/flechebleu.png")" style="width:200px" alt=""> 
-        </div>
-
     </div>
 </div>    
 }

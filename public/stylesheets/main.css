@@ -22,3 +22,56 @@
 .content-Enjoy{
     padding: 40px;
 }
+
+/** Index mainintro**/
+
+.intro-header, .footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    
+    background: url(../images/fontscreen.png) no-repeat center center;
+    background-size: cover;
+    height: 400px;
+}
+
+.header-msg {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+.header-msg > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+    color: white;
+}
+
+.header-msg > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    color: white;
+}
+
+.sign{
+    text-align: center;
+}
+
+.footer{
+    height: 100px;
+    color: white;
+}
+
+
+/***** Register page ******/
+
+.register-header{
+    float : left;
+    background: url(../images/fontscreen.png) no-repeat center center;
+    background-size: cover;
+    height: 60px;
+}
+
+.whitisant{
+    color : white!important;    
+}
