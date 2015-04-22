@@ -19,12 +19,18 @@ object RedisSchema {
     def keyAuthToUser(token: String): String = s"token:$token:uid"
 
     // To retrieve a set of followers uid
-    def keyFollowers(uid: String) = s"user:$uid:followers"
+    def keyFollower(uid: String) = s"user:$uid:followers"
 
     // sTo retrieve a set of following uid
     def keyFollowing(uid: String) = s"user:$uid:following"
 
     //Hometimeline: followed and user's posts
     def keyHomeTimeline(uid: String): String = s"user:$uid:posts"
+    def keyPosts : String = "posts"
+    def keyPosts(pid : String) = s"post:$pid"
+    def keyPostsUID(uid : String) = s"posts:$uid"
 
+
+    //list  global posts
+    val globalTimeline = "globalTimeline"
 }
