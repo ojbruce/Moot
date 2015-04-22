@@ -7,6 +7,12 @@ This small application is a twitter-like but with moot inside.
 
 Powered by bootstrap, angularjs, css3, html5 ...
 
+
+<p align="center">
+  <img src="https://github.com/ojbruce/Moot/blob/master/public/images/moot_firstpage.png?raw=true"/>
+</p>
+
+
 Requirements:
 ------------
 Have activator
