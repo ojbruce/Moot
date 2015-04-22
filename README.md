@@ -15,7 +15,7 @@ Powered by bootstrap, angularjs, css3, html5 ...
 
 Requirements:
 ------------
-Have activator
+Have activator and a redis server.
 
 
 Run the application :
