@@ -40,8 +40,8 @@ object RegistrationPage extends Controller{
        
        // Retrieving the request
         implicit request =>
-            val username =(request.queryString.get("username").flatMap(_.headOption)).getOrElse("toto")
-            val password =(request.queryString.get("password").flatMap(_.headOption)).getOrElse("password1")
+            val username = (request.queryString.get("username").flatMap(_.headOption)).getOrElse("toto")
+            val password = (request.queryString.get("password").flatMap(_.headOption)).getOrElse("password1")
 
             val name = request.queryString.get("username").flatMap(_.headOption)
 
@@ -55,7 +55,7 @@ object RegistrationPage extends Controller{
                 (uid,token)   <- RedisService.signUpUser(username, password)
 
             } yield {
-                Ok(views.html.home(uid,username)).withSession("login" -> token + "username" -> username)
+                Ok(views.html.home(uid,name.getOrElse("Lulu"))).withSession("login" -> token + "username" -> username)
             }
 
     }

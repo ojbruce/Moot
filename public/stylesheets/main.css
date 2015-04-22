@@ -75,3 +75,28 @@
 .whitisant{
     color : white!important;    
 }
+
+/****** Main page ********/
+
+.home-header{
+    color : white!important; 
+    margin-bottom: 50px;
+}
+
+.mootPannel{
+    width : 345px!important;
+}
+
+.feed{
+    list-style-type: none;
+}
+
+.feedAuthor{
+    font-size: 12px;
+}
+
+.feedMsg{
+    color : #0A274F;
+    display: block;
+    word-break: break-word;
+}

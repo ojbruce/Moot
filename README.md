@@ -36,3 +36,13 @@ http://danielwestheide.com/blog/2013/01/09/the-neophytes-guide-to-scala-part-8-w
 Twitter :
 
 http://highscalability.com/blog/2014/9/8/how-twitter-uses-redis-to-scale-105tb-ram-39mm-qps-10000-ins.html
+
+
+Some tips about the project:
+----------------------------
+
+This was my first scala, play, redis project.
+Therefore it is only the shape of it but I clearly learned some tricks.
+Have a non blocking application is not quite easy. You need to learn some scala tricks : Future, for-comprehension structure, Either.
+Not sure I myself have totally understand it.
+But it was Fun trying!
