@@ -99,15 +99,18 @@ object RedisService{
     * @param password the user's password
     * @return (Future of) the UID 
     */
-    def loginUser(username: String, password: String):Unit = {
+    def loginUser(username: String, password: String):Future[Boolean] = {
         //TODO
         //Match username with uid
         //Match password with uid
         //Return if okay
-        var retrievedUid = redis.get(RedisSchema.keyUsernameToId(username))
-        //var retrievedPassword = redis.hmGet(RedisSchema.keyUser(retrievedUid),"password")
+        
+        for{
+            retrievedUid <- redis.get(RedisSchema.keyUsernameToId(username))
+            res <- redis.hmGet(RedisSchema.keyUser(retrievedUid.get),"password")
+        }yield res == password
 
-        Logger.info(s"[RedisService] User logged $retrievedUid !")
+        
     }
 
     /**
@@ -165,21 +168,6 @@ object RedisService{
     /***** Action on posts ******/
 
 
-
-
-
-  /**
-   * Push a post to REdis
-   * @param pid post id of message being saved
-   * @param msg message to save
-   * @return (Future of) Unit
-   
-    def savePost(pid: String, date: Long, msg: String, uid:String): Future[Unit] = {
-        
-        redis.hmSet(RedisSchema.keyPosts(pid), Map( "pid" -> pid, "date" -> date,"author" -> uid, "body" -> msg))
-        
-    }*/
-
   /**
    * Method that will posts each into the user and his followers feed
    * @param author of the post
@@ -213,10 +201,13 @@ object RedisService{
       val postId = java.util.UUID.randomUUID.toString
 
       for {
+        //save global
         _ <-redis.lPush(RedisSchema.globalTimeline, postId)
-        //_ <- savePost(postId, date, body, author)
+        //Pousse le poste
+        _ <- redis.hmSet(RedisSchema.keyPosts(postId), Map("pid" -> postId, "date" -> date.toString,"author" -> author, "body" -> body))
         _ <-distributPost(author, postId)
-        _ <- redis.lTrim(RedisSchema.globalTimeline,0,1000)
+        //Memory is important in redis cant afford leak
+        _ <- redis.lTrim(RedisSchema.globalTimeline,0,2000)
       } yield postId
     }
 

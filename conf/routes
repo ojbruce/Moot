@@ -14,8 +14,20 @@ GET /landing                            controllers.RegistrationPage.register
 GET /login                              controllers.RegistrationPage.register
 GET /signup                             controllers.RegistrationPage.register
 
+
 POST /login                             controllers.RegistrationPage.login
 POST /signup                            controllers.RegistrationPage.signup
 
+POST /login/:username/:password           controllers.Application.login(username: String, password: String)
+
 #Logoout
 GET /logout                             controllers.RegistrationPage.logout
+
+#Api 
+GET /user/follow/:uid/:other            controllers.Application.follow(uid: String, other: String)
+GET /user/unfollow/:uid/:other          controllers.Application.unfollow(uid: String, other: String)
+GET /user/followers/:uid                controllers.Application.getFollower(uid: String)
+GET /user/following/:uid                controllers.Application.getFollowing(uid: String)
+GET /user/timeline/:uid                 controllers.Application.getUserTimeline(uid: String)
+
+POST /user/moot/:timestamp/:body        controllers.Application.moot(body: String,timestamp : Long)

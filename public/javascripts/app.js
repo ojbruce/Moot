@@ -21,8 +21,7 @@ function MootCtrl($scope ) {
     //map of user_id => object describing public components of user
     $scope.init = function (uid, username) {
         $scope.loggedUser.uid = uid;
-        $scope.loggedUser.username = "Lola";
-        //$scope.users[current_user] = {'uid':current_user, 'username': username, 'isFollowing':false};
+        $scope.loggedUser.username = username;
     }
 
     /**
@@ -49,22 +48,21 @@ function MootCtrl($scope ) {
 
     };
 
+    /**
+    * Function to generate a unique id useful for ng repeat dupes
+    *
+    */
     function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+      }
 
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4();
-}
-   
-
-    //var global_feed_messages = new StringSet();
-    //var my_feed_messages = new StringSet();
-
-
+      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+    }
+    $scope.loggedUser.uid = uid;
+        $scope.loggedUser.username
+  
 
 
     $scope.followUser = function(user_id) {
