@@ -38,6 +38,7 @@ http://docs.scala-lang.org/overviews/
 Scala futures :
 https://www.playframework.com/documentation/2.3.x/ScalaAsync
 http://danielwestheide.com/blog/2013/01/09/the-neophytes-guide-to-scala-part-8-welcome-to-the-future.html
+http://danielwestheide.com/scala/neophytes.html
 
 Twitter :
 
